@@ -15,8 +15,13 @@ from PIL import Image
 current_dir = Path(__file__).parent if "_file_" in locals() else Path.cwd()
 
 ##profile picture
+profile_pic = current_dir / "business_pic.JPG"
+profile_pic = Image.open(profile_pic)
+
+
+##rodgers at lambeau picture
 pic_of_drez = current_dir / "drez_pic_jpg.JPG"
-profile_pic = Image.open(pic_of_drez)
+rodgers_pic = Image.open(pic_of_drez)
 
 ##other pictures
 
@@ -48,8 +53,8 @@ selected = option_menu(
             default_index = 0,  # optional
             orientation = "horizontal",
             styles = {
-                "container": {"padding": "0!important", "background-color": "#fafafa"},
-                "icon": {"color": "orange", "font-size": "25px"},
+                "container": {"padding": "0!important", "background-color": "black"},
+                "icon": {"color": "yellow", "font-size": "32px"},
                 "nav-link": {
                     "font-size": "25px",
                     "text-align": "left",
@@ -66,7 +71,7 @@ selected = option_menu(
 ### Home Tab ###
 if selected == "Home":
     st.markdown("<h1 style = 'text-align: center; color: #06691d;'>Welcome to my Website!</h1>", unsafe_allow_html = True)
-    st.markdown("<h1 style = 'text-align: center; color: black;'>I am Drezdan Dale, and I created this website for my Leadership Capstone Class</h1>", unsafe_allow_html = True)
+    st.markdown("<h1 style = 'text-align: center; color: white;'>I am Drezdan Dale, and I created this website for my Leadership Capstone Class</h1>", unsafe_allow_html = True)
     col1, col2 = st.columns([2,1])
     col1.write("I am a Data Science major who loves to code, so instead of using Wix or another free tool \
              to build a website, I decided to make my own website using Streamlit in Python! \
@@ -81,9 +86,9 @@ if selected == "Home":
     with st.container():
         st.write("---")
         st.header("Have Questions or Want to Connect?")
-        st.write("Fill out the form below to send me an email!")
+        st.write("Fill out the form below to send me an email or connect with me on [LinkedIn](https://www.linkedin.com/in/drezdan-dale/)!")
         contact_form = """
-        <form action="https://formsubmit.co/ddale23@jcu.edu" method="POST">
+        <form action="https://formsubmit.co/ddale23@jcu.edu" method="POST"/>
             <input type="hidden" name="_captcha" value="false">
             <input type="text" name="name" placeholder="Enter your name" required>
             <input type="email" name="email" placeholder="Enter your email" required>
@@ -112,7 +117,7 @@ if selected == "Home":
 
 ### About Me Tab ###
 if selected == "About Me":
-    st.title(f"You have selected {selected}")
+    st.title("ABOUT ME SECTION")
 
 
 
